@@ -1,3 +1,4 @@
 build
 out/linux
 *~
+CMakeLists.txt.user

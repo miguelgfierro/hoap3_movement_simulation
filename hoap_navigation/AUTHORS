@@ -1,0 +1,6 @@
+hoap_navigation - HOAP3 humanoid navigation in a real enviroment obtained using the Kinect cam. The path planning is made using BiRRT and the walking is made using the cart table
+
+Authors
+-------
+
+Main maintainer is Miguel González-Fierro <mgpalaci@ing.uc3m.es>

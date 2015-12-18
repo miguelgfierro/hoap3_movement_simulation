@@ -1,0 +1,6 @@
+hoap_navigation - HOAP3 humanoid navigation in a real enviroment obtained using the Kinect cam. The path planning is made using BiRRT and the walking is made using the cart table
+
+Installation from CMake (Multiplatform)
+---------------------------------------
+
+Navigate to the project. An out-of-source build is recommended however not mandatory. To do this, create and enter a 'build' directory. 'cmake ..' should create a 'Makefile' or '.sln' there. A 'make' or 'build' should make output 'hoap_navigation' appear in ./out/ correspondent directory.
