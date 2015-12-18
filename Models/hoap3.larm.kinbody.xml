@@ -1,0 +1,87 @@
+<!-- * HOAP-3 humanoid robot model in OpenRAVE: Left Arm
+		 *
+		 * Authors: Daniel Hernández García <dhgarcia@ing.uc3m.es> (2011)
+		 *					Miguel González-Fierro <mgpalaci@ing.uc3m.es> (2012)
+		 *
+ -->
+<KinBody name="uc3m-hoap3-larm">
+<modelsdir>./HOAP_iv_HD</modelsdir>
+	<Body name="left_shoulder1" type="dynamic">
+		<Geom type="trimesh">	
+			<rotationaxis>0 0 1 -90</rotationaxis> 		
+			<data>LARM_LINK01.iv 0.001</data>
+			<render>LARM_LINK01.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.21</total>        
+			<radius>0.5</radius>
+		</mass> 
+		<!--<Mass type="custom">
+			<total> 0.21 </total>
+			<inertia>8.66760e-05  8.54331e-08  2.13651e-07
+					 8.54331e-08  6.69975e-05 -3.14870e-06 
+					 2.13651e-07 -3.14870e-06  7.29706e-05  </inertia>
+			<com>  -3.64197e-05 6.64174e-03 -6.34825e-03 </com>
+		</Mass>-->
+	</Body>
+	<Body name="left_shoulder2" type="dynamic">
+		<offsetfrom>left_shoulder1</offsetfrom>
+		<Geom type="trimesh">	
+			<rotationaxis>1 0 0 90</rotationaxis> 				
+			<data>LARM_LINK02.iv 0.001</data>
+			<render>LARM_LINK02.iv 0.001</render>
+		</Geom>
+		<mass type="sphere">
+			<total>0.234</total>        
+			<radius>0.5</radius>
+		</mass> 
+		<!--<Mass type="custom">
+			<total> 0.234 </total>
+			<inertia> 1.90701e-04 -4.53865e-06  4.72738e-07
+					 -4.53865e-06  9.55349e-05  1.08196e-05 
+					  4.72738e-07  1.08196e-05  1.67377e-04  </inertia>
+			<com>   7.47218e-04  -4.63619e-02 -3.77403e-03 </com>
+		</Mass>-->
+	</Body>
+	<Body name="left_shoulder3" type="dynamic">
+		<offsetfrom>left_shoulder2</offsetfrom>
+		<translation>0 -0.110 0 </translation>	<!--OJO AL MANOJO!!! There is 1 mm of error, the correct length is 0.111 -->	
+		<Geom type="trimesh">			
+			<rotationaxis>1 0 0 180</rotationaxis> 
+			<rotationaxis>0 1 0 -90</rotationaxis> 			
+			<data>LARM_LINK03.iv 0.001</data>
+			<render>LARM_LINK03.iv 0.001</render>
+		</Geom>
+		<mass type="sphere">
+			<total>0.1965</total>        
+			<radius>0.5</radius>
+		</mass> 
+		<!--<Mass type="custom">
+			<total> 0.1965 </total>
+			<inertia> 6.51094e-05  1.24947e-07  1.66316e-06
+					  1.24947e-07  5.30426e-05 -5.66321e-07
+					  1.66316e-06 -5.66321e-07  6.81049e-05  </inertia>
+			<com>    -2.70991e-03 1.60227e-03 -2.09019e-03 </com>
+		</Mass>-->
+	</Body>
+	<Body name="left_elbow" type="dynamic">
+		<offsetfrom>left_shoulder3</offsetfrom>
+		<Geom type="trimesh">
+			<rotationaxis>0 0 1 -90</rotationaxis>
+			<rotationaxis>1 0 0 -90</rotationaxis>
+			<data>LARM_LINK04.iv 0.001</data>
+			<render>LARM_LINK04.iv 0.001</render>
+		</Geom>
+		<mass type="sphere">
+			<total>0.216</total>    
+			<radius>0.5</radius>
+		</mass> 
+		<!--<Mass type="custom">
+			<total> 0.216 </total>
+			<inertia>  3.59070e-04 -7.34962e-07 -7.26630e-07
+					  -7.34962e-07  1.03303e-04 -2.22301e-05
+					  -7.26630e-07 -2.22301e-05  3.35228e-04  </inertia>
+			<com>    9.62091e-04  6.64766e-02  5.58629e-04 </com>
+		</Mass>-->
+	</Body>
+</KinBody>

@@ -1,0 +1,304 @@
+<!-- * HOAP-3 humanoid robot model in OpenRAVE
+		 *
+		 * Authors: Daniel Hernández García <dhgarcia@ing.uc3m.es> (2011)
+		 *					Miguel González-Fierro <mgpalaci@ing.uc3m.es> (2012)
+		 *
+ -->
+<Robot name="uc3m-HOAP-3">
+	<KinBody file="./hoap3.bodyhead.kinbody.xml">				
+	<KinBody file="./hoap3.rarm.kinbody.xml">		
+		<translation>-0.111 0 0.125</translation>	<!--ARM_LINK1=0.111 0 BODY_LINK1=0.125-->
+	</KinBody>
+	<KinBody file="./hoap3.larm.kinbody.xml">		
+		<translation>0.111 0 0.125</translation>	<!--ARM_LINK1=0.111 0 BODY_LINK1=0.125-->	  
+	</KinBody>
+  <KinBody file="./hoap3.rleg.kinbody.xml">		
+		<translation>-0.039 0 -0.055</translation>	<!--LEG_LINK1=0.039 WAIST_LINK2=0.035 WAIST_LINK1=0.055-->
+	</KinBody>
+	<KinBody file="./hoap3.lleg.kinbody.xml">		
+		<translation>0.039 0 -0.055</translation>	<!--LEG_LINK1=0.039 WAIST_LINK2=0.035 WAIST_LINK1=0.055-->
+	</KinBody>    
+<!-- ############################   JOINTS   ############################ -->
+<!-- The joints are orderer as in the Hoap manual: 
+	right_leg(6),right_arm(4),left_leg(6),left_arm(4),waist(1)= total 21 DoF -->
+	<Joint name="RLEG_JOINT[1]" type="hinge">		
+		<body>waist</body>
+		<body>right_hip1</body>
+		<offsetfrom>right_hip1</offsetfrom>
+<!--		<limitsdeg>-91 31</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>0 0 -1</axis>
+		<anchor>0 0 0</anchor>
+		<maxtorque>3</maxtorque>
+        <maxvel>35</maxvel>
+    </Joint>
+    <Joint name="RLEG_JOINT[2]" type="hinge">
+	    <offsetfrom>right_hip1</offsetfrom>
+		<Body>right_hip1</Body>
+		<Body>right_hip2</Body>
+<!--		<limitsdeg>-31 21</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>0 1 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RLEG_JOINT[3]" type="hinge">
+	    <offsetfrom>right_hip2</offsetfrom>
+		<Body>right_hip2</Body>
+		<Body>right_hip3</Body>
+<!--		<limitsdeg>-82 71</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>-1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RLEG_JOINT[4]" type="hinge">
+	    <offsetfrom>right_knee</offsetfrom>
+		<Body>right_hip3</Body>
+		<Body>right_knee</Body>
+<!--		<limitsdeg>-1 130</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>1 0 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RLEG_JOINT[5]" type="hinge">
+	    <offsetfrom>right_ankle1</offsetfrom>
+		<Body>right_knee</Body>
+		<Body>right_ankle1</Body>
+<!--		<limitsdeg>-61 61</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>1 0 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RLEG_JOINT[6]" type="hinge">
+	    <offsetfrom>right_ankle1</offsetfrom>
+		<Body>right_ankle1</Body>
+		<Body>right_ankle2</Body>
+<!--		<limitsdeg>-25 25</limitsdeg>		
+		<axis>0 1 0</axis>-->
+		<axis>0 -1 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RARM_JOINT[1]" type="hinge">		
+		<body>body</body>
+		<body>right_shoulder1</body>
+		<offsetfrom>right_shoulder1</offsetfrom>
+<!--		<limitsdeg>-91 151</limitsdeg>	
+		<axis>0 0 1</axis>	-->
+		<axis>1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+    </Joint>
+    <Joint name="RARM_JOINT[2]" type="hinge">
+	    <offsetfrom>right_shoulder1</offsetfrom>
+		<Body>right_shoulder1</Body>
+		<Body>right_shoulder2</Body>
+<!--		<limitsdeg>-96 1</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>0 0 1</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RARM_JOINT[3]" type="hinge">
+	    <offsetfrom>right_shoulder2</offsetfrom>
+		<Body>right_shoulder2</Body>
+		<Body>right_shoulder3</Body>
+<!--		<limitsdeg>-91 91</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>0 -1 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="RARM_JOINT[4]" type="hinge">
+	    <offsetfrom>right_shoulder3</offsetfrom>
+		<Body>right_shoulder3</Body>
+		<Body>right_elbow</Body>
+<!--		<limitsdeg>-115 1</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>-1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LLEG_JOINT[1]" type="hinge">		
+		<body>waist</body>
+		<body>left_hip1</body>
+		<offsetfrom>left_hip1</offsetfrom>
+<!--		<limitsdeg>-91 31</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>0 0 -1</axis>
+		<anchor>0 0 0</anchor>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+  </Joint>
+  <Joint name="LLEG_JOINT[2]" type="hinge">
+	  <offsetfrom>left_hip1</offsetfrom>
+		<Body>left_hip1</Body>
+		<Body>left_hip2</Body>
+<!--		<limitsdeg>-21 31</limitsdeg>		
+		<axis>0 -1 0</axis>		-->
+		<axis>0 1 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LLEG_JOINT[3]" type="hinge">
+	  <offsetfrom>left_hip2</offsetfrom>
+		<Body>left_hip2</Body>
+		<Body>left_hip3</Body>
+<!--		<limitsdeg>-82 71</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LLEG_JOINT[4]" type="hinge">
+	  <offsetfrom>left_knee</offsetfrom>
+		<Body>left_hip3</Body>
+		<Body>left_knee</Body>
+<!--		<limitsdeg>-1 130</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>-1 0 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LLEG_JOINT[5]" type="hinge">
+	  <offsetfrom>left_ankle1</offsetfrom>
+		<Body>left_knee</Body>
+		<Body>left_ankle1</Body>
+<!--		<limitsdeg>-61 61</limitsdeg>		
+		<axis>0 0 1</axis>-->
+		<axis>-1 0 0</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LLEG_JOINT[6]" type="hinge">
+	  <offsetfrom>left_ankle1</offsetfrom>
+		<Body>left_ankle1</Body>
+		<Body>left_ankle2</Body>
+<!--		<limitsdeg>-25 25</limitsdeg>		
+		<axis>0 1 0</axis>-->
+		<axis>0 -1 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+  <Joint name="LARM_JOINT[1]" type="hinge">		
+		<body>body</body>
+		<body>left_shoulder1</body>
+		<offsetfrom>left_shoulder1</offsetfrom>
+<!--		<limitsdeg>-91 151</limitsdeg>	
+		<axis>0 0 1</axis>	-->
+		<axis>-1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+    </Joint>
+    <Joint name="LARM_JOINT[2]" type="hinge">
+	    <offsetfrom>left_shoulder1</offsetfrom>
+		<Body>left_shoulder1</Body>
+		<Body>left_shoulder2</Body>
+<!--		<limitsdeg>-1 96</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>0 0 1</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LARM_JOINT[3]" type="hinge">
+	  <offsetfrom>left_shoulder2</offsetfrom>
+		<Body>left_shoulder2</Body>
+		<Body>left_shoulder3</Body>
+<!--		<limitsdeg>-91 91</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>0 -1 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+	<Joint name="LARM_JOINT[4]" type="hinge">
+	  <offsetfrom>left_shoulder3</offsetfrom>
+		<Body>left_shoulder3</Body>
+		<Body>left_elbow</Body>
+<!--		<limitsdeg>-115 1</limitsdeg>		
+		<axis>0 -1 0</axis>-->
+		<axis>1 0 0</axis>
+		<maxtorque>3</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>	
+	<Joint name="BODY_JOINT[1]" type="hinge">
+	  <offsetfrom>body</offsetfrom>
+		<Body>body</Body>
+		<Body>waist</Body>
+<!--		<limitsdeg>-10 90</limitsdeg>
+		<axis>0 -1 0</axis>-->
+		<axis>1 0 0</axis>
+		<maxtorque>1.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+<!-- Virtual joints for head and hands -->	
+	<Joint type="hinge" name="HEAD_JOINT[1]">	    
+		 <offsetfrom>head1</offsetfrom>
+		<Body>body</Body>
+		<Body>head1</Body>
+		<limitsdeg>-60 60</limitsdeg>		
+		<axis>0 0 -1</axis>		
+	</Joint> 
+	<Joint type="hinge" name="HEAD_JOINT[2]">	    
+		<offsetfrom>head1</offsetfrom>
+		<Body>head1</Body>
+		<Body>head2</Body>
+		<limitsdeg>-45 15</limitsdeg>		
+		<axis>1 0 0</axis>		
+	</Joint> 
+	<Joint type="hinge" name="HEAD_JOINT[3]">	    
+		<offsetfrom>head1</offsetfrom>
+		<Body>head1</Body>
+		<Body>head2</Body>
+		<limitsdeg>-15 15</limitsdeg>
+		<axis>0 -1 0</axis>	
+	</Joint> 
+	<Joint type="hinge" name="RIGHT_HAND[1]">	    	
+		<Body>right_elbow</Body>
+		<Body>right_shoulder3</Body>
+		<limitsdeg>-60 60</limitsdeg>
+		<axis>0 -1 0</axis>	
+	</Joint> 
+	<Joint type="hinge" name="LEFT_HAND[1]">	    	
+		<Body>left_elbow</Body>
+		<Body>left_shoulder3</Body>
+		<limitsdeg>-60 60</limitsdeg>
+		<axis>0 -1 0</axis>	
+	</Joint> 
+	<Joint type="hinge" name="RIGHT_HAND[2]">	    	
+		<Body>right_elbow</Body>
+		<Body>right_shoulder3</Body>
+		<limitsdeg>-60 60</limitsdeg>
+		<axis>0 -1 0</axis>	
+	</Joint> 
+	<Joint type="hinge" name="LEFT_HAND[2]">	    		
+		<Body>left_elbow</Body>
+		<Body>left_shoulder3</Body>
+		<limitsdeg>-60 60</limitsdeg>
+		<axis>0 -1 0</axis>	
+	</Joint> 
+	</KinBody>
+<!-- ##########################   MANIPULATOR   ########################## -->
+  <Manipulator name="hoap-right-arm">
+		<base>body</base>
+		<effector>right_elbow</effector>
+		<!-- <armjoints>RARM_JOINT[1] RARM_JOINT[2] RARM_JOINT[3]</armjoints> -->
+	</Manipulator>
+	<Manipulator name="hoap-left-arm">
+		<base>body</base>
+		<effector>left_elbow</effector>
+		<!-- <armjoints>LARM_JOINT[1] LARM_JOINT[2] LARM_JOINT[3]</armjoints> -->
+	</Manipulator>
+	<Manipulator name="hoap-right-leg">
+		<base>body</base>
+		<effector>right_ankle2</effector>
+		<!-- <armjoints>LLEG_JOINT[1] LLEG_JOINT[2] LLEG_JOINT[3] LLEG_JOINT[4] LLEG_JOINT[5]</armjoints> -->
+	</Manipulator>
+	<Manipulator name="hoap-left-leg">
+		<base>body</base>
+		<effector>left_ankle2</effector>
+		<!-- <armjoints>RLEG_JOINT[1] RLEG_JOINT[2] RLEG_JOINT[3] RLEG_JOINT[4] RLEG_JOINT[5]</armjoints> -->
+	</Manipulator>  
+  </Robot>

@@ -1,0 +1,29 @@
+<KinBody name="door">
+  <Body name="door" type="dynamic">
+    <Geom type="box">
+      <extents>0.22 0.51 0.0174</extents>
+      <translation>0 0.51 0</translation>
+      <diffusecolor>0.818 0.6157 0.0941</diffusecolor>
+    </Geom>
+    <Geom type="cylinder">
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <radius>0.015</radius>
+      <height>0.003</height>
+      <translation>-0.2 0.48 -0.02</translation>
+    </Geom>
+  </Body>
+  <Body name="handle" type="dynamic">
+    <Translation>0 0 -0.02</Translation>
+    <Geom type="cylinder">
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <radius>0.007</radius>
+      <height>0.04</height>
+      <translation>-0.2 0.48 -0.018</translation>
+    </Geom>
+    <Geom type="box">
+      <translation>-0.18 0.48 -0.035</translation>
+      <extents>0.03 0.007 0.003</extents>
+    </Geom>
+  </Body>
+</KinBody>
+

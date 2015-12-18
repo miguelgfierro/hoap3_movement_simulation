@@ -1,0 +1,30 @@
+<!-- * Bola robot model in OpenRAVE
+		 *
+		 * Authors: Miguel González-Fierro <mgpalaci@ing.uc3m.es> (2012)				
+		 *
+ -->
+
+<Robot>
+<Robot name="hoap3_bola">
+	<KinBody file="./hoap3.head.kinbody.xml">		</KinBody>
+</Robot>
+<KinBody name="nada">
+	<Body name="nada2" type="dynamic">
+		<translation>0.0  0.0 0.0</translation>					
+		<Geom type="box">
+        <extents>0.01 0.01 0.01</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+      	<ambientColor>0.6 0.6 0.6</ambientColor>
+		</Geom>
+	</Body> 
+</KinBody>
+	<Joint name="JOINT_nada" type="hinge">
+		<Body>head2</Body>
+		<Body>nada</Body>
+		<limitsdeg>-1 130</limitsdeg>		
+		<axis>0 0 1</axis>
+		<maxtorque>4.5</maxtorque>
+		<maxvel>35</maxvel>
+	</Joint>
+</Robot>

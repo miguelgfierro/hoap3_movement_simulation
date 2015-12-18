@@ -1,0 +1,30 @@
+<!-- * HOAP-3 humanoid robot model in OpenRAVE: Head
+		 *
+		 * Authors: Daniel Hernández García <dhgarcia@ing.uc3m.es> (2011)
+		 *					Miguel González-Fierro <mgpalaci@ing.uc3m.es> (2012)
+		 *
+ -->
+<KinBody name="uc3m-hoap3-bodyhead">
+	<modelsdir>./HOAP_iv_HD</modelsdir>
+	<Body name="head2" type="dynamic">
+		<!--<offsetfrom>head1</offsetfrom>-->
+		<translation>0.0  0.015  0.023</translation>					
+		<rotationaxis>1 0 0 -90</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>		
+		<Geom type="trimesh">						
+			<data>HEAD_LINK02.iv 0.002</data>
+			<render>HEAD_LINK02.iv 0.002</render>
+		</Geom>
+		<Mass type="sphere">
+			<total>0.412</total>        
+			<radius>0.5</radius>
+		</Mass> 
+		<!--<Mass type="custom">
+			<total> 0.412 </total>
+			<inertia>5.52356e-04 7.77318e-06  3.17868e-06
+					 7.77318e-06 7.32140e-04  4.57784e-07
+					 3.17868e-06 4.57784e-07  6.82132e-04  </inertia>
+			<com> -0.00103952 -0.00517985  1.82267e-05 </com>
+		</Mass> -->
+	</Body>	
+</KinBody>

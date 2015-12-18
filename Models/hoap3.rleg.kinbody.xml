@@ -1,0 +1,129 @@
+<!-- * HOAP-3 humanoid robot model in OpenRAVE: Right Leg
+		 *
+		 * Authors: Daniel Hernández García <dhgarcia@ing.uc3m.es> (2011)
+		 *					Miguel González-Fierro <mgpalaci@ing.uc3m.es> (2012)
+		 *
+ -->
+<KinBody name="uc3m-hoap3-rleg">
+<modelsdir>./HOAP_iv_HD</modelsdir>	
+	<Body name="right_hip1" type="dynamic">
+		<Geom type="trimesh">		
+			<rotationaxis>1 0 0 90</rotationaxis> 	
+			<data>RLEG_LINK01.iv 0.001</data>
+			<render>RLEG_LINK01.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.0587</total>        
+			<radius>0.5</radius>
+		</mass>	
+		<!--<Mass type="custom">
+			<total> 0.0587 </total>
+			<inertia> 5.98251e-05  4.07692e-07  5.70458e-06
+					  4.07692e-07  4.32046e-05 -2.93763e-06 
+					  5.70458e-06 -2.93763e-06  2.95761e-05  </inertia>
+			<com>   -0.003015  -0.0022399  0.0335846 </com>
+		</Mass>  -->
+	</Body>
+	<Body name="right_hip2" type="dynamic">
+		<offsetfrom>right_hip1</offsetfrom>	
+		<Geom type="trimesh">		
+			<rotationaxis>0 1 0 -90</rotationaxis> 
+			<rotationaxis>0 0 1 180</rotationaxis> 	
+			<data>RLEG_LINK02.iv 0.001</data>
+			<render>RLEG_LINK02.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.21</total>        
+			<radius>0.5</radius>
+		</mass>	
+		<!--<Mass type="custom">
+			<total> 0.21 </total>
+			<inertia> 6.94143e-05 -8.93597e-07  4.50011e-07
+					 -8.93597e-07  5.87096e-05  5.13879e-07
+					  4.50011e-07  5.13879e-07  5.47365e-05  </inertia>
+			<com>  -0.00272697 0.00113482 0.0023778 </com>
+		</Mass> -->
+	</Body>
+	<Body name="right_hip3" type="dynamic">
+		<offsetfrom>right_hip2</offsetfrom>		
+		<Geom type="trimesh">			
+			<rotationaxis>0 1 0 -90</rotationaxis> 
+			<rotationaxis>0 0 1 -90</rotationaxis> 
+			<data>RLEG_LINK03.iv 0.001</data>
+			<render>RLEG_LINK03.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.519</total>        
+			<radius>0.5</radius>
+		</mass>	
+		<!--<Mass type="custom">
+			<total> 0.519 </total>
+			<inertia> 3.33437e-04 -1.04660e-05  2.86176e-05
+					 -1.04660e-05  7.15435e-04 -1.85334e-05
+					  2.86176e-05 -1.85334e-05  6.69659e-04  </inertia>
+			<com>  -0.0698208 0.00616508 -0.00326392 </com>
+		</Mass> -->
+	</Body>
+	<Body name="right_knee" type="dynamic">
+		<offsetfrom>right_hip3</offsetfrom>
+		<translation>0 0 -0.105</translation>			
+		<Geom type="trimesh">			
+			<rotationaxis>0 1 0 -90</rotationaxis> 
+			<rotationaxis>0 0 1 -90</rotationaxis> 
+			<data>RLEG_LINK04.iv 0.001</data>
+			<render>RLEG_LINK04.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.328</total>        
+			<radius>0.5</radius>
+		</mass>	
+		<!--<Mass type="custom">
+			<total> 0.328 </total>
+			<inertia> 2.14004e-04 -2.63054e-05 -1.52711e-05
+					 -2.63054e-05  3.34738e-04 -9.48167e-06
+					 -1.52711e-05 -9.48167e-06  2.73483e-04  </inertia>
+			<com>   -0.0508521  0.00536785 -0.0046975 </com>
+		</Mass> -->
+	</Body>
+	<Body name="right_ankle1" type="dynamic">
+		<offsetfrom>right_knee</offsetfrom>
+		<translation>0 0 -0.105</translation>	
+		<Geom type="trimesh">			
+			<rotationaxis>0 1 0 -90</rotationaxis> 
+			<rotationaxis>0 0 1 -90</rotationaxis> 
+			<data>RLEG_LINK05.iv 0.001</data>
+			<render>RLEG_LINK05.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.195</total>        
+			<radius>0.5</radius>
+		</mass>	
+		<!--<Mass type="custom">
+			<total> 0.195 </total>
+			<inertia> 6.35459e-05  2.96980e-07 -5.85740e-07
+					  2.96980e-07  5.29750e-05 -9.54911e-07
+					 -5.85740e-07 -9.54911e-07  5.27906e-05  </inertia>
+			<com>   0.00293669 0.00366853 -0.00133746 </com>
+		</Mass> -->
+	</Body>
+	<Body name="right_ankle2" type="dynamic">
+		<offsetfrom>right_ankle1</offsetfrom>
+		<Geom type="trimesh">		
+			<rotationaxis>0 1 0 -90</rotationaxis> 
+			<rotationaxis>0 0 1 180</rotationaxis> 	
+			<data>RLEG_LINK06.iv 0.001</data>
+			<render>RLEG_LINK06.iv 0.001</render>
+		</Geom>	
+		<mass type="sphere">
+			<total>0.154</total>        
+			<radius>0.5</radius>
+		</mass> 
+		<!--<Mass type="custom">
+			<total> 0.154 </total>
+			<inertia> 2.19262e-04  3.30179e-06  1.63411e-05
+					  3.30179e-06  1.78310e-04 -3.47988e-06
+					  1.63411e-05 -3.47988e-06  8.20349e-05  </inertia>
+			<com>  -0.0292236 0.00324167 0.00827642 </com>
+		</Mass> -->
+	</Body>
+</KinBody>
